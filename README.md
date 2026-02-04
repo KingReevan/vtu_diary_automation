@@ -81,7 +81,7 @@ Create a `.env` file and fill in the following values:
 ```env
 VTU_WEBSITE=https://vtu.internyet.in/sign-in
 VTU_EMAIL=justinbeiber@gmail.com
-VTU_PASSWORD=
+VTU_PASSWORD=UmVldmFuIGhhcyBFRA==
 INTERNSHIP_COMPANY="Diddy's Software Technologies"
 HOURS_WORKED=10
 SKILLS='["Python", "Intelligent Machines", "Data modeling", "Database design", "Machine learning"]'
