@@ -8,8 +8,10 @@ from datetime import date
 import tempfile
 import os
 import subprocess
+import json
 
 load_dotenv()
+SKILLS = json.loads(os.environ["SKILLS"])
 
 # User input will be taken from notepad
 def read_from_editor():
@@ -86,16 +88,10 @@ def run(playwright: Playwright, learning_outcome: str) -> None:
     page.get_by_role("textbox", name="What did you learn or ship").click()
     page.get_by_role("textbox", name="What did you learn or ship").fill(learning_outcome)
     page.locator(".react-select__input-container").click()
-    page.locator("#react-select-2-input").fill("pyth")
-    page.get_by_role("option", name="Python").click()
-    page.locator("#react-select-2-input").fill("intell")
-    page.get_by_role("option", name="Intelligent Machines").click()
-    page.locator("#react-select-2-input").fill("data")
-    page.get_by_role("option", name="Data modeling").click()
-    page.locator("#react-select-2-input").fill("data")
-    page.get_by_role("option", name="Database design").click()
-    page.locator("#react-select-2-input").fill("machine")
-    page.get_by_role("option", name="Machine learning").click()
+    
+    for skill in SKILLS:
+        page.locator("#react-select-2-input").fill(skill)
+        page.get_by_role("option", name=skill).click()
     # Uncomment the below function if you want to have a look before the diary gets saved to VTU database. When paused, window will close in 30 seconds.
     # page.pause()
     page.get_by_role("button", name="Save").click()
