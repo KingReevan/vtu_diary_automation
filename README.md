@@ -14,6 +14,7 @@ Instead of manually logging into the VTU portal every day and writing repetitive
 - You must either have a Gemini API key (It is Free on Google AI Studio) or OpenAI API key (Paid)
 - python version 3.10 or above
 - Use uv or pip package manager
+- You must not be a snitch
 
 ## Important Notes
 - **The diary is only filled for the current day**
@@ -24,6 +25,7 @@ Instead of manually logging into the VTU portal every day and writing repetitive
 - If you are using OpenAI API Key then run the test.py file after filling in the env variables.
 - If you are using Gemini API Key then run the test2.py file after filling in the env variables.
 - Use the command `pip install -r requirements.txt` to install all the packages
+- You must enter all your details in the `.env` file whose format is given below.
 
 ## How the Diary Is Filled (Step-by-Step)
 
@@ -71,16 +73,6 @@ Finally, the diary entry is saved.
 
 ---
 
-## Tech Stack Used
-
-- **Python**
-- **Playwright** – browser automation
-- **DSPy** – LLM orchestration
-- **Gemini / OpenAI APIs** – learning outcome generation
-- **dotenv** – environment variable management
-
----
-
 ## Environment Setup
 
 Create a `.env` file and fill in the following values:
@@ -95,3 +87,13 @@ SKILLS='["Python", "Intelligent Machines", "Data modeling", "Database design", "
 OPENAI_API_KEY=
 GEMINI_API_KEY=
 ```
+
+---
+
+## Tech Stack Used
+
+- **Python**
+- **Playwright** – browser automation
+- **DSPy** – LLM orchestration
+- **Gemini / OpenAI APIs** – learning outcome generation
+- **dotenv** – environment variable management
