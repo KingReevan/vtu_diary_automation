@@ -15,6 +15,16 @@ Instead of manually logging into the VTU portal every day and writing repetitive
 - python version 3.10 or above
 - Use uv or pip package manager
 
+## Important Notes
+- **The diary is only filled for the current day**
+- The date picker always selects **Today**
+- Past or future dates are not supported by design
+- Company name must be exactly the same as on the vtu portal
+- The List of skills must also be present on the portal. Don't make up your own skills.
+- If you are using OpenAI API Key then run the test.py file after filling in the env variables.
+- If you are using Gemini API Key then run the test2.py file after filling in the env variables.
+- Use the command `pip install -r requirements.txt` to install all the packages
+
 ## How the Diary Is Filled (Step-by-Step)
 
 ### 1) User writes daily work in Notepad  
@@ -59,16 +69,6 @@ Using **Playwright**, the script:
 
 Finally, the diary entry is saved.
 
----
-
-### 4) Important Note
-- **The diary is only filled for the current day**
-- The date picker always selects **Today**
-- Past or future dates are not supported by design
-- Company name must be exactly the same as on the vtu portal
-- The List of skills must also be present on the portal. Don't make up your own skills.
-- If you are using OpenAI API Key then run the test.py file after filling in the env variables.
-- If you are using Gemini API Key then run the test2.py file after filling in the env variables.
 ---
 
 ## Tech Stack Used
