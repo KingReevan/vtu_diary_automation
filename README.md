@@ -25,6 +25,7 @@ Instead of manually logging into the VTU portal every day and writing repetitive
 - If you are using OpenAI API Key then run the test.py file after filling in the env variables.
 - If you are using Gemini API Key then run the test2.py file after filling in the env variables.
 - Use the command `pip install -r requirements.txt` to install all the packages
+- Use command `playwright install`
 - You must enter all your details in the `.env` file whose format is given below.
 
 ## How the Diary Is Filled (Step-by-Step)
