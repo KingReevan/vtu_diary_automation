@@ -1,5 +1,5 @@
 import re
-from playwright.sync_api import Playwright, sync_playwright, expect
+from playwright.sync_api import Playwright, sync_playwright
 import dspy
 from dotenv import load_dotenv
 import re
@@ -74,14 +74,14 @@ def run(playwright: Playwright, learning_outcome: str) -> None:
     page.get_by_role("button", name="I Understand").click()
     page.get_by_role("link", name="Internship Diary", exact=True).click()
     page.get_by_role("combobox", name="Select Internship *").click()
-    page.get_by_label("Virtual Origami Technologies").get_by_text("Virtual Origami Technologies").click()
+    page.get_by_label(os.environ['INTERNSHIP_COMPANY']).get_by_text(os.environ['INTERNSHIP_COMPANY']).click()
     page.get_by_role("button", name="Pick a Date").click()
     page.get_by_role("button", name="Today").click()
     page.get_by_role("button", name="Continue").click()
     page.get_by_role("textbox", name="Briefly describe the work you").click()
     page.get_by_role("textbox", name="Briefly describe the work you").fill(work_description)
     page.get_by_placeholder("e.g.").click()
-    page.get_by_placeholder("e.g.").fill("10")
+    page.get_by_placeholder("e.g.").fill(os.environ["HOURS_WORKED"])
     page.get_by_role("textbox", name="What did you learn or ship").click()
     page.get_by_role("textbox", name="What did you learn or ship").fill(learning_outcome)
     page.locator(".react-select__input-container").click()
@@ -95,6 +95,8 @@ def run(playwright: Playwright, learning_outcome: str) -> None:
     page.get_by_role("option", name="Database design").click()
     page.locator("#react-select-2-input").fill("machine")
     page.get_by_role("option", name="Machine learning").click()
+    # Uncomment the below function if you want to have a look before the diary gets saved to VTU database. When paused, window will close in 30 seconds.
+    # page.pause()
     page.get_by_role("button", name="Save").click()
 
     # ---------------------
